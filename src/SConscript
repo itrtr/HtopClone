@@ -10,7 +10,7 @@ source_files = [
 env.Append(CPPPATH=['../header'])
 
 # Build the library
-env.Library(target='log', source=source_files)
+env.Library(target='src_obj', source=source_files)
 
 # Optional: Use content-timestamp as a decider for builds
 Decider('content-timestamp')
