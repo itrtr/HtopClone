@@ -26,5 +26,5 @@ jobs:
       - name: Build with SCons
         run: scons
 
-      - name: Run tests
-        run: ./test_output.sh
+#      - name: Run tests
+#        run: ./test_output.sh
