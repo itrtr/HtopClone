@@ -14,4 +14,4 @@ SConscript('./src/SConscript', exports='src_env')
 env.Append(LIBPATH=['./src'])
 
 # Build the main program with the log library
-env.Program(target=PROGRAM_NAME, source='main.cpp', LIBS=['log'])
+env.Program(target=PROGRAM_NAME, source='main.cpp', LIBS=['src_obj'])

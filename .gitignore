@@ -1,3 +1,8 @@
 *.dblite
 .idea
 cmake-build-debug
+build/
+*.exe
+*.o
+*.a
+*.json
