@@ -3,14 +3,11 @@ env = Environment()
 
 # List of source files
 source_files = [
-    'Log.cpp'
+    'OSFileReader.cpp'
 ]
 
 # Specify include directories
-env.Append(CPPPATH=['../header'])
+env.Append(CPPPATH=['../header', '../model'])
 
 # Build the library
 env.Library(target='src_obj', source=source_files)
-
-# Optional: Use content-timestamp as a decider for builds
-Decider('content-timestamp')
