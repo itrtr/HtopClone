@@ -1,0 +1,16 @@
+# Import SCons Environment
+env = Environment()
+
+# List of source files
+source_files = [
+    'Log.cpp'
+]
+
+# Specify include directories
+env.Append(CPPPATH=['../header'])
+
+# Build the library
+env.Library(target='log', source=source_files)
+
+# Optional: Use content-timestamp as a decider for builds
+Decider('content-timestamp')
