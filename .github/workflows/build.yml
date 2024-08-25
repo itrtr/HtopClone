@@ -3,20 +3,20 @@ name: Build with SCons
 on:
   push:
     branches:
-      - main  # Trigger the workflow on pushes to the 'main' branch
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3  # Checkout the repository code
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v4  # Set up Python (necessary if your build process depends on Python)
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # Use a specific Python version if needed
+          python-version: '3.10'
 
       - name: Install SCons
         run: |
@@ -24,7 +24,4 @@ jobs:
           pip install scons
 
       - name: Build with SCons
-        run: scons  # Run SCons (ensure your SCons build file is correctly configured in the repo)
-
-      # Optionally, add more steps if needed (e.g., run tests, upload artifacts)
-
+        run: scons
