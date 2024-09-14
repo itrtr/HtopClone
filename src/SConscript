@@ -3,7 +3,8 @@ env = Environment()
 
 # List of source files
 source_files = [
-    'OSFileReader.cpp'
+    'OSFileReader.cpp',
+    'CPUFileReader.cpp'
 ]
 
 # Specify include directories

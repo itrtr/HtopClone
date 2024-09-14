@@ -1,24 +1,42 @@
 //
 // Created by pnkjsng on 8/24/24.
-//
-#include "OSFileReader.h"
-#include "Logger.h"
+// main.cpp - The main file which triggers the whole process
+#include "CPUFileReader.h"
+#include "CPUFileReaderResponse.h"
 #include "FileReaderResponse.h"
+#include "Logger.h"
+#include "OSFileReader.h"
 #include "OSFileReaderResponse.h"
 
-int main() {
-    OSFileReader osFileReader;
-    std::unique_ptr<FileReaderResponse> response = osFileReader.readFile("/etc/os-release");
 
-    if (response) {
-        Logger::log("File read successfully");
-        // Cast to OSFileReaderResponse to access derived class methods
-        auto osResponse = dynamic_cast<OSFileReaderResponse*>(response.get());
-        if (osResponse) {
-            osResponse->print();
-        }
-    } else {
-        Logger::log("Failed to read file");
-    }
+void printOSInfo();
+void printCPUInfo();
+
+int main() {
+    printOSInfo();
+    printCPUInfo();
     return 0;
+}
+
+void printCPUInfo() {
+    Logger::log("-------------------------------------");
+    CPUFileReader cpuFileReader;
+    std::unique_ptr<FileReaderResponse> cpuResponse = cpuFileReader.readFile("");
+    if (cpuResponse) {
+        cpuResponse->print();
+    } else {
+        Logger::log("Failed to read OS file");
+    }
+}
+
+void printOSInfo() {
+    Logger::log("-------------------------------------");
+    OSFileReader osFileReader;
+    std::unique_ptr<FileReaderResponse> osResponse = osFileReader.readFile("");
+
+    if (osResponse) {
+        osResponse->print();
+    } else {
+        Logger::log("Failed to read OS file");
+    }
 }

@@ -1,5 +1,5 @@
 env = Environment()
-env.Decider('content-timestamp')
+# env.Decider('content-timestamp')
 
 # System level constants
 PROGRAM_NAME = 'htop'

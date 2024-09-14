@@ -14,15 +14,16 @@
 #include <fstream>
 #include <memory>
 
-template<typename T>
+template <typename T>
 using UniqPtr = std::unique_ptr<T>;
 
-class OSFileReader: public FileReader {
+class OSFileReader : public FileReader
+{
 public:
-    UniqPtr<FileReaderResponse> readFile(const std::string& filePath) override;
+    UniqPtr<FileReaderResponse> readFile(const std::string &filePath) override;
+
 private:
     const std::string DEFAULT_OS_PATH = "/etc/os-release";
 };
 
-
-#endif //HTOPCLONE_OSFILEREADER_H
+#endif // HTOPCLONE_OSFILEREADER_H

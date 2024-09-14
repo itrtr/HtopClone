@@ -21,7 +21,6 @@ UniqPtr<FileReaderResponse> OSFileReader::readFile(const std::string& path) {
 
     if (successfulRead) {
         auto response = std::make_unique<OSFileReaderResponse>(filePath, successfulRead);
-        std::string content;
         std::string line;
         std::unordered_map<std::string, std::string> keyValuePairs;
         // Read the file content line by line

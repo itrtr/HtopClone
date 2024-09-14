@@ -4,25 +4,25 @@
 
 #ifndef HTOPCLONE_OSFILEREADERRESPONSE_H
 #define HTOPCLONE_OSFILEREADERRESPONSE_H
-#include <string>
+#include "FileReaderResponse.h"
 #include <fstream>
 #include <iostream>
-#include "FileReaderResponse.h"
+#include <string>
 
 class OSFileReaderResponse : public FileReaderResponse {
 public:
     OSFileReaderResponse() = default;
-    OSFileReaderResponse(const std::string& path,
+    OSFileReaderResponse(const std::string &path,
                          bool successfulRead) {
         filePath_ = path;
         successfulRead_ = successfulRead;
     }
 
-    OSFileReaderResponse(const std::string& path,
-                         const std::string& name,
-                         const std::string& id,
-                         const std::string& prettyName,
-                         bool successfulRead): name_(name), id_(id), prettyName_(prettyName) {
+    OSFileReaderResponse(const std::string &path,
+                         const std::string &name,
+                         const std::string &id,
+                         const std::string &prettyName,
+                         bool successfulRead) : name_(name), id_(id), prettyName_(prettyName) {
         filePath_ = path;
         successfulRead_ = successfulRead;
     }
@@ -31,9 +31,9 @@ public:
     std::string getOperatingSystemId() const { return id_; }
     std::string getOperatingSystemPrettyName() const { return prettyName_; }
 
-    void setOperatingSystemName(const std::string& name) { this->name_ = name; }
-    void setOperatingSystemId(const std::string& id) { this->id_ = id; }
-    void setOperatingSystemPrettyName(const std::string& prettyName) { this->prettyName_ = prettyName; }
+    void setOperatingSystemName(const std::string &name) { this->name_ = name; }
+    void setOperatingSystemId(const std::string &id) { this->id_ = id; }
+    void setOperatingSystemPrettyName(const std::string &prettyName) { this->prettyName_ = prettyName; }
 
     virtual void print() const override {
         FileReaderResponse::print();
@@ -48,4 +48,4 @@ private:
     std::string prettyName_;
 };
 
-#endif //HTOPCLONE_OSFILEREADERRESPONSE_H
+#endif // HTOPCLONE_OSFILEREADERRESPONSE_H
