@@ -4,7 +4,8 @@ env = Environment()
 # List of source files
 source_files = [
     'OSFileReader.cpp',
-    'CPUFileReader.cpp'
+    'CPUFileReader.cpp',
+    'MemFileReader.cpp'
 ]
 
 # Specify include directories
